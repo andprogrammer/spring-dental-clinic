@@ -14,7 +14,8 @@ public class Patient {
     private String lastName;
     private LocalDate lastVisitDate;
 
-    public Patient() {}
+    protected Patient() {
+    }
 
     public Patient(String firstName, String lastName, LocalDate lastVisitDate) {
         this.firstName = firstName;
@@ -23,20 +24,22 @@ public class Patient {
     }
 
     public boolean requiresVisit() {
-        return lastVisitDate.plusMonths(6).isBefore(LocalDate.now())
-                || lastVisitDate.plusMonths(6).isEqual(LocalDate.now());
+        return !lastVisitDate.plusMonths(6).isAfter(LocalDate.now());
     }
 
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getFirstName() { return firstName; }
-    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public String getFirstName() {
+        return firstName;
+    }
 
-    public String getLastName() { return lastName; }
-    public void setLastName(String lastName) { this.lastName = lastName; }
+    public String getLastName() {
+        return lastName;
+    }
 
-    public LocalDate getLastVisitDate() { return lastVisitDate; }
-    public void setLastVisitDate(LocalDate lastVisitDate) {
-        this.lastVisitDate = lastVisitDate;
+    public LocalDate getLastVisitDate() {
+        return lastVisitDate;
     }
 }
