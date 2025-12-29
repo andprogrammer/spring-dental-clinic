@@ -1,4 +1,4 @@
-package com.dental.spring_dental_clinic;
+package com.dental.dentalclinic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

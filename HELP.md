@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.dental.spring-dental-clinic' is invalid and this project uses 'com.dental.spring_dental_clinic' instead.
+* The original package name 'com.dental.spring-dental-clinic' is invalid and this project uses 'com.dental.dentalclinic' instead.
 
 # Getting Started
 
