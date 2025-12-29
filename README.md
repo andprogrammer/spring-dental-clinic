@@ -13,7 +13,7 @@ It uses Spring Web, Spring Data JPA, and an H2 in-memory database.
 
 ## Repository
 ```bash
-git clone git@github.com:andprogrammer/spring-shop-backend.git
+git@github.com:andprogrammer/spring-dental-clinic.git
 ```
 
 ## Docker
@@ -25,7 +25,7 @@ docker build -t spring-dental-clinic .
 docker run -d -p 8080:8080 --name spring-dental-clinic-container spring-dental-clinic
 ```
 
-http://localhost:8080
+http://localhost:8080/patients
 
 ```bash
 docker stop spring-dental-clinic-container
