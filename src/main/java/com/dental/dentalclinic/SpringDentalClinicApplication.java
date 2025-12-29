@@ -1,4 +1,4 @@
-package com.dental.spring_dental_clinic;
+package com.dental.dentalclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

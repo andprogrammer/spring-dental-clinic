@@ -1,4 +1,4 @@
-package com.example.dentalclinic.model;
+package com.dental.dentalclinic.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
@@ -27,7 +27,6 @@ public class Patient {
                 || lastVisitDate.plusMonths(6).isEqual(LocalDate.now());
     }
 
-    // Getters & setters
     public Long getId() { return id; }
 
     public String getFirstName() { return firstName; }
