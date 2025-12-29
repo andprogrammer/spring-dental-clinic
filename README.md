@@ -13,7 +13,7 @@ It uses Spring Web, Spring Data JPA, and an H2 in-memory database.
 
 ## Repository
 ```bash
-git@github.com:andprogrammer/spring-dental-clinic.git
+git clone git@github.com:andprogrammer/spring-dental-clinic.git
 ```
 
 ## Docker
