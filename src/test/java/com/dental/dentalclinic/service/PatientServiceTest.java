@@ -3,6 +3,7 @@ package com.dental.dentalclinic.service;
 import com.dental.dentalclinic.model.Patient;
 import com.dental.dentalclinic.repository.PatientRepository;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -13,8 +14,6 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
-
-import org.junit.jupiter.api.extension.ExtendWith;
 
 @ExtendWith(MockitoExtension.class)
 class PatientServiceTest {
@@ -27,12 +26,12 @@ class PatientServiceTest {
 
     @Test
     void shouldReturnPatientsRequiringVisit() {
-        Patient patient1 = new Patient(
+        Patient patient = new Patient(
                 "John", "Doe", LocalDate.now().minusMonths(7)
         );
 
         when(repository.findPatientsRequiringVisit(any(LocalDate.class)))
-                .thenReturn(List.of(patient1));
+                .thenReturn(List.of(patient));
 
         List<Patient> result = service.getPatientsRequiringVisit();
 
