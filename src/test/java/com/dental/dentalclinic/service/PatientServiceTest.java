@@ -11,6 +11,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,11 +30,9 @@ class PatientServiceTest {
         Patient patient1 = new Patient(
                 "John", "Doe", LocalDate.now().minusMonths(7)
         );
-        Patient patient2 = new Patient(
-                "Anna", "Smith", LocalDate.now().minusMonths(2)
-        );
 
-        when(repository.findAll()).thenReturn(List.of(patient1, patient2));
+        when(repository.findPatientsRequiringVisit(any(LocalDate.class)))
+                .thenReturn(List.of(patient1));
 
         List<Patient> result = service.getPatientsRequiringVisit();
 
