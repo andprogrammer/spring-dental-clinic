@@ -1,0 +1,53 @@
+###
+# curl -X POST http://localhost:8080/patients
+#  -H "Content-Type: application/json"
+#  -d '{
+#    "firstName": "John",
+#    "lastName": "Doe",
+#    "lastVisitDate": "2024-01-10"
+#  }'
+POST http://localhost:8080/patients
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "lastVisitDate": "2024-01-10"
+}
+
+###
+
+# curl http://localhost:8080/patients
+GET http://localhost:8080/patients
+
+###
+
+
+# curl http://localhost:8080/patients/requires-visit
+GET http://localhost:8080/patients/requires-visit
+
+###
+
+
+# curl http://localhost:8080/patients/active
+GET http://localhost:8080/patients/active
+
+###
+
+
+# curl -X PUT http://localhost:8080/patients/1/visited
+PUT http://localhost:8080/patients/1/visited
+
+###
+
+
+# curl -X DELETE http://localhost:8080/patients/1
+DELETE http://localhost:8080/patients/1
+
+###
+
+
+# curl "http://localhost:8080/patients/active?page=0&size=5"
+GET http://localhost:8080/patients/active?page=0&size=5
+
+###

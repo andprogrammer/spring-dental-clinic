@@ -38,6 +38,7 @@ docker rm spring-dental-clinic-container
 # docker-compose.yml -> spring app + postgres db
 ```bash
 docker compose up --build
+docker compose stop
 
 psql -h localhost -p 5432 -U dental -d dentalclinic
 
@@ -47,3 +48,25 @@ SELECT * FROM patient;
 \q                  -- quit
 
 ```
+
+#Access pgAdmin
+
+Open browser: http://localhost:5050
+
+Login:
+
+Email: admin@admin.com
+
+Password: admin
+
+Register PostgreSQL server in pgAdmin
+
+Host: postgres
+
+Port: 5432
+
+Database: dentalclinic
+
+Username: dental
+
+Password: dental

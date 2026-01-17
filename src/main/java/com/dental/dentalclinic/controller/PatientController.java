@@ -2,6 +2,7 @@ package com.dental.dentalclinic.controller;
 
 import com.dental.dentalclinic.model.Patient;
 import com.dental.dentalclinic.service.PatientService;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,8 +28,25 @@ public class PatientController {
     }
 
     @GetMapping("/requires-visit")
-    public List<Patient> patientsRequiringVisit() {
+    public List<Patient> getPatientsRequiringVisit() {
         return service.getPatientsRequiringVisit();
     }
-}
 
+    @GetMapping("/active")
+    public Page<Patient> getActivePatients(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
+    ) {
+        return service.getActivePatients(page, size);
+    }
+
+    @PutMapping("/{id}/visited")
+    public void markVisited(@PathVariable Long id) {
+        service.markPatientVisited(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deactivatePatient(@PathVariable Long id) {
+        service.deactivate(id);
+    }
+}
