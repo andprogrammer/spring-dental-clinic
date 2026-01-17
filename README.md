@@ -34,3 +34,16 @@ docker stop spring-dental-clinic-container
 ```bash
 docker rm spring-dental-clinic-container
 ```
+
+# docker-compose.yml -> spring app + postgres db
+```bash
+docker compose up --build
+
+psql -h localhost -p 5432 -U dental -d dentalclinic
+
+\dt                 -- list tables
+\d patient          -- describe patient table
+SELECT * FROM patient;
+\q                  -- quit
+
+```

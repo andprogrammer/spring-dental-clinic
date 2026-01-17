@@ -4,8 +4,8 @@ import com.dental.dentalclinic.model.Patient;
 import com.dental.dentalclinic.repository.PatientRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class PatientService {
@@ -25,10 +25,7 @@ public class PatientService {
     }
 
     public List<Patient> getPatientsRequiringVisit() {
-        return repository.findAll()
-                .stream()
-                .filter(Patient::requiresVisit)
-                .collect(Collectors.toList());
+        LocalDate cutoff = LocalDate.now().minusMonths(6);
+        return repository.findPatientsRequiringVisit(cutoff);
     }
 }
-
